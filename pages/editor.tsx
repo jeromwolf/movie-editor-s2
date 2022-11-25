@@ -14,13 +14,13 @@ function editor() {
         corePath: '/FFmpeg/ffmpeg-core.js',
     });
 
-    const handlechangeImage = (e) => {
+    const handlechangeImage = (e: any) => {
         const file = e.target.files[0];
         console.log(file);
         setImageFile(file);
     }
 
-    const handlechangeSound = (e) => {
+    const handlechangeSound = (e: any) => {
         const file = e.target.files[0];
         console.log(file);
         setSoundFile(file);
@@ -31,7 +31,7 @@ function editor() {
         await ffmpeg.load();
 
         ffmpeg.FS('writeFile', 'image.png', await fetchFile(imageFile));
-        ffmpeg.FS('writeFile', 'sound.mp3', await fetchFile(sountFile));
+        ffmpeg.FS('writeFile', 'sound.mp3', await fetchFile(soundFile));
 
         await ffmpeg.run("-framerate", "1/10", "-i", "image.png", "-i", "sound.mp3", "-c:v", "libx264", "-t", "10", "-pix_fmt", "yuv420p", "-vf", "scale=1920:1080", "test.mp4");
 
