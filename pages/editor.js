@@ -7,7 +7,7 @@ function editor() {
     // upload file functionality
 
     const [imageFile, setImageFile] = useState({});
-    const [sountFile, setSoundFile] = useState({});
+    const [soundFile, setSoundFile] = useState({});
 
     const ffmpeg = createFFmpeg({
         log: true,
