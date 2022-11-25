@@ -14,13 +14,13 @@ function editor() {
         corePath: '/FFmpeg/ffmpeg-core.js',
     });
 
-    const handlechangeImage = (e: any) => {
+    const handlechangeImage = (e) => {
         const file = e.target.files[0];
         console.log(file);
         setImageFile(file);
     }
 
-    const handlechangeSound = (e: any) => {
+    const handlechangeSound = (e) => {
         const file = e.target.files[0];
         console.log(file);
         setSoundFile(file);
